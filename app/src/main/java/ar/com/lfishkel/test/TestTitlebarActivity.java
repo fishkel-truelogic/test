@@ -5,10 +5,10 @@ import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.Window;
 
 import ar.com.lfishkel.test.list.ListViewDemoFragment;
+import ar.com.lfishkel.test.list.RightLayoutFragment;
 
 /**
  * Created by lfishkel on 26/03/15.
@@ -20,6 +20,7 @@ public abstract class TestTitlebarActivity extends Activity {
     //////////////////////////////////////////////////////////////////////
 
     public static final String LIST_FRAGMENT_TAG = "list_fragment_tag";
+    public static final String LIST_TAG = "list_fragment";
 
     //////////////////////////////////////////////////////////////////////
     // Attributes
@@ -45,7 +46,7 @@ public abstract class TestTitlebarActivity extends Activity {
         requestWindowFeature(Window.FEATURE_CUSTOM_TITLE);
         setContentView(layout_id);
         getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE, title_bar_id);
-      //  addShowHideListener(R.id.btn_list, LIST_FRAGMENT_TAG);
+        //  addShowHideListener(R.id.btn_list, LIST_FRAGMENT_TAG);
     }
 
 
@@ -169,17 +170,18 @@ public abstract class TestTitlebarActivity extends Activity {
         if (f != null) {
             getFragmentManager().popBackStack();
         } else {
-            ListViewDemoFragment fragment = (ListViewDemoFragment) Fragment.instantiate(this, ListViewDemoFragment.class.getName());
-            ViewGroup fl = (ViewGroup) findViewById(frame_id);
-            fragment.setWidth((int) (fl.getWidth() * 0.85));
+
+            RightLayoutFragment fragment = (RightLayoutFragment) Fragment.instantiate(this, RightLayoutFragment.class.getName());
             getFragmentManager()
                     .beginTransaction()
                     .setCustomAnimations(R.anim.slide_left_in_test, R.anim.slide_right_out_test,
                             R.anim.slide_left_in_test, R.anim.slide_right_out_test)
 
-                    .add(frame_id, fragment,
-                         LIST_FRAGMENT_TAG).addToBackStack(null).commit();
+                    .add(frame_id, fragment, LIST_FRAGMENT_TAG).addToBackStack(null).commit();
+
+
         }
+
     }
 
 }
