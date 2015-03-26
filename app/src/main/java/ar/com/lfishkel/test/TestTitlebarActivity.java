@@ -5,6 +5,7 @@ import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.Window;
 
 import ar.com.lfishkel.test.list.ListViewDemoFragment;
@@ -162,18 +163,21 @@ public abstract class TestTitlebarActivity extends Activity {
     }
 
 
-    public void toggleList() {
+    public void toggleList(View v) {
         Fragment f = getFragmentManager().findFragmentByTag(LIST_FRAGMENT_TAG);
 
         if (f != null) {
             getFragmentManager().popBackStack();
         } else {
+            ListViewDemoFragment fragment = (ListViewDemoFragment) Fragment.instantiate(this, ListViewDemoFragment.class.getName());
+            ViewGroup fl = (ViewGroup) findViewById(frame_id);
+            fragment.setWidth((int) (fl.getWidth() * 0.85));
             getFragmentManager()
                     .beginTransaction()
                     .setCustomAnimations(R.anim.slide_left_in_test, R.anim.slide_right_out_test,
                             R.anim.slide_left_in_test, R.anim.slide_right_out_test)
 
-                    .add(frame_id, Fragment.instantiate(this, ListViewDemoFragment.class.getName()),
+                    .add(frame_id, fragment,
                          LIST_FRAGMENT_TAG).addToBackStack(null).commit();
         }
     }

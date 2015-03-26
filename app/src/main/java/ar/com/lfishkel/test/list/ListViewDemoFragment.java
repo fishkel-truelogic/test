@@ -20,6 +20,7 @@ import ar.com.lfishkel.test.TestActivity2;
  */
 public class ListViewDemoFragment extends ListFragment {
 
+    private int width;
     private List<ListViewItem> mItems;        // ListView items list
 
     @Override
@@ -41,6 +42,7 @@ public class ListViewDemoFragment extends ListFragment {
         // initialize and set the list adapter
         setListAdapter(new ListViewDemoAdapter(getActivity(), mItems));
 
+
     }
 
 
@@ -50,6 +52,9 @@ public class ListViewDemoFragment extends ListFragment {
         super.onViewCreated(view, savedInstanceState);
         // remove the dividers from the ListView of the ListFragment
         getListView().setDivider(null);
+        ViewGroup.LayoutParams params = view.getLayoutParams();
+        params.width = width;
+        view.setLayoutParams(params);
     }
 
     @Override
@@ -64,8 +69,6 @@ public class ListViewDemoFragment extends ListFragment {
     }
 
     public void setWidth(int width) {
-        ViewGroup.LayoutParams params = this.getView().getLayoutParams();
-        params.width = width;
-        this.getView().setLayoutParams(params);
+        this.width = width;
     }
 }
