@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:orientation="vertical" android:layout_width="match_parent" android:id="@+id/activity2_test"
     android:layout_height="match_parent" android:background="@drawable/activity2_icon"
     android:weightSum="1">
-
-
+<!--
+    <fragment android:name="ar.com.lfishkel.test.list.ListViewDemoFragment"
+        android:id="@+id/list"
+        android:layout_weight="1"
+        android:layout_width="100dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="right" />
+-->
     <TextView
         android:layout_width="165dp"
         android:layout_height="wrap_content"
@@ -14,4 +20,7 @@
         android:layout_weight="0.23"
         android:textSize="100dp"
         android:textAlignment="center" />
+
+
+
 </LinearLayout>

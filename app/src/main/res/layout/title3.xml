@@ -34,16 +34,16 @@
         <ImageView
             android:layout_width="135dp"
             android:layout_height="wrap_content"
-            android:src="@drawable/back"
-            android:id="@+id/btn_back"
+            android:src="@drawable/home"
+            android:id="@+id/btn_home"
             android:layout_gravity="left"
             android:onClick="goToHome"/>
 
         <ImageView
             android:layout_width="135dp"
             android:layout_height="wrap_content"
-            android:src="@drawable/invisible"
-            android:id="@+id/btn_invisible"
+            android:src="@drawable/search"
+            android:id="@+id/btn_search"
             android:layout_gravity="center"
             />
 
@@ -54,6 +54,7 @@
             android:id="@+id/btn_list"
             android:layout_gravity="right"/>
 
+        <!-- Stuff -->
 
     </LinearLayout>
 

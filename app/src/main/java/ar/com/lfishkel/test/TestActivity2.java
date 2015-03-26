@@ -1,14 +1,11 @@
 package ar.com.lfishkel.test;
 
-import android.app.Activity;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.TextView;
 
 /**
  * Created by lfishkel on 25/03/15.
  */
-public class TestActivity2 extends Activity {
+public class TestActivity2 extends TestTitlebarActivity {
 
     //////////////////////////////////////////////////////////////////////
     // Constants
@@ -19,26 +16,13 @@ public class TestActivity2 extends Activity {
     // Attributes
     //////////////////////////////////////////////////////////////////////
 
-    private View layout;
-
 
     //////////////////////////////////////////////////////////////////////
     // The activity is being created.
     //////////////////////////////////////////////////////////////////////
     @Override
     public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity2_test);
-        System.out.println("Activity2: The activity is being created");
-        Bundle extras = getIntent().getExtras();
-        String title = "";
-        if (extras != null) {
-            title = extras.getString("item");
-        }
-        TextView txt = (TextView) findViewById(R.id.txt);
-        if (title != null && !title.isEmpty()) {
-            txt.setText(title);
-        }
+        super.onCreate(savedInstanceState, R.layout.activity2_test, R.layout.title2, R.id.activity2_test);
     }
 
 
@@ -48,7 +32,6 @@ public class TestActivity2 extends Activity {
     @Override
     protected void onStart() {
         super.onStart();
-        System.out.println("Activity2: The activity is about to become visible.");
     }
 
     //////////////////////////////////////////////////////////////////////
@@ -57,7 +40,6 @@ public class TestActivity2 extends Activity {
     @Override
     protected void onRestart() {
         super.onRestart();
-        System.out.println("Activity2: The activity is about to become visible again.");
     }
 
 
@@ -67,8 +49,6 @@ public class TestActivity2 extends Activity {
     @Override
     protected void onResume() {
         super.onResume();
-        System.out.println("Activity2: The activity has become visible (it is now \"resumed\").");
-
     }
 
 
@@ -78,8 +58,6 @@ public class TestActivity2 extends Activity {
     @Override
     protected void onPause() {
         super.onPause();
-        System.out.println("Activity2: Another activity is taking focus (this activity is about to be \"paused}\").");
-
     }
 
 
@@ -89,7 +67,6 @@ public class TestActivity2 extends Activity {
     @Override
     protected void onStop() {
         super.onStop();
-        System.out.println("Activity2: The activity is no longer visible (it is now \"stopped\")");
     }
 
 
@@ -99,7 +76,6 @@ public class TestActivity2 extends Activity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        System.out.println("Activity2: The activity is about to be destroyed.");
     }
 
 
