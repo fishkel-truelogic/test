@@ -17,14 +17,7 @@
         android:layout_height="wrap_content"
         android:text="Activity 2"
         android:id="@+id/btn_activity_2"
-        android:layout_gravity="center"
+        android:layout_gravity="left|center_vertical"
         android:onClick="openActivity2"/>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Activity 1"
-        android:id="@+id/btn_activity_1"
-        android:layout_gravity="left|center_vertical"
-        android:onClick="openActivity"/>
 </FrameLayout>

@@ -1,6 +1,7 @@
 package ar.com.lfishkel.test;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -28,7 +29,6 @@ public class TestActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test);
-        ActivityManager.getInstance().setTestActivity(this);
         if (savedInstanceState != null) {
             counter = savedInstanceState.getInt(COUNTER);
         }
@@ -108,32 +108,15 @@ public class TestActivity extends Activity {
     // View Controls
     //////////////////////////////////////////////////////////////////////
 
-    public void openActivity(View v) {
-        if (ActivityManager.getInstance().getTestActivity() == null) {
-            ActivityManager.getInstance().openActivity(this, TestActivity.class);
-        } else {
-            this.
-            this.onStop();
-            ActivityManager.getInstance().getTestActivity().onStart();
-        }
-    }
-
     public void openActivity2(View v) {
-        if (ActivityManager.getInstance().getTestActivity2() == null) {
-            ActivityManager.getInstance().openActivity(this, TestActivity2.class);
-        } else {
-            this.onStop();
-            ActivityManager.getInstance().getTestActivity2().onStart();
-        }
+        Intent intent = new Intent(this, TestActivity2.class);
+        startActivity(intent);
+
     }
 
     public void openActivity3(View v) {
-        if (ActivityManager.getInstance().getTestActivity3() == null) {
-            ActivityManager.getInstance().openActivity(this, TestActivity3.class);
-        } else {
-            this.onStop();
-            ActivityManager.getInstance().getTestActivity3().onStart();
-        }
+        Intent intent = new Intent(this, TestActivity3.class);
+        startActivity(intent);
     }
 
 }

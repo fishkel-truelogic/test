@@ -4,28 +4,5 @@
     android:layout_height="match_parent" android:background="@drawable/icon">
 
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Activity 3"
-        android:id="@+id/btn_activity_3"
-        android:layout_gravity="right|center_vertical"
-        android:onClick="openActivity3"/>
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Activity 2"
-        android:id="@+id/btn_activity_2"
-        android:layout_gravity="center"
-        android:onClick="openActivity2"/>
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Activity 1"
-        android:id="@+id/btn_activity_1"
-        android:layout_gravity="left|center_vertical"
-        android:onClick="openActivity"/>
 
 </LinearLayout>

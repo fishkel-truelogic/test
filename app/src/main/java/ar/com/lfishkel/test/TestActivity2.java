@@ -28,7 +28,6 @@ public class TestActivity2 extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity2_test);
-        ActivityManager.getInstance().setTestActivity2(this);
         System.out.println("Activity2: The activity is being created");
     }
 
@@ -104,32 +103,6 @@ public class TestActivity2 extends Activity {
     // View Controls
     //////////////////////////////////////////////////////////////////////
 
-    public void openActivity(View v) {
-        if (ActivityManager.getInstance().getTestActivity() == null) {
-            ActivityManager.getInstance().openActivity(this, TestActivity.class);
-        } else {
-            this.onStop();
-            ActivityManager.getInstance().getTestActivity().onStart();
-        }
-    }
-
-    public void openActivity2(View v) {
-        if (ActivityManager.getInstance().getTestActivity2() == null) {
-            ActivityManager.getInstance().openActivity(this, TestActivity2.class);
-        } else {
-            this.onStop();
-            ActivityManager.getInstance().getTestActivity2().onStart();
-        }
-    }
-
-    public void openActivity3(View v) {
-        if (ActivityManager.getInstance().getTestActivity3() == null) {
-            ActivityManager.getInstance().openActivity(this, TestActivity3.class);
-        } else {
-            this.onStop();
-            ActivityManager.getInstance().getTestActivity3().onStart();
-        }
-    }
 
 
 }
