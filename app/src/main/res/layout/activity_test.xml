@@ -4,30 +4,6 @@
     android:background="@drawable/activity_icon">
 
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Activity 3"
-        android:id="@+id/btn_activity_3"
-        android:layout_gravity="center_horizontal|bottom"
-        android:onClick="openActivity3"/>
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Activity 2"
-        android:id="@+id/btn_activity_2"
-        android:layout_gravity="center_horizontal|top"
-        android:onClick="openActivity2"/>
-
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="list"
-        android:id="@+id/btn_list"
-        android:layout_gravity="right|top" />
-
     <fragment android:name="ar.com.lfishkel.test.list.ListViewDemoFragment"
         android:id="@+id/list"
         android:layout_weight="1"

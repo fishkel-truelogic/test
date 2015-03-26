@@ -7,7 +7,7 @@ import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
+import android.view.Window;
 import android.widget.FrameLayout;
 
 import ar.com.lfishkel.test.list.ListViewDemoFragment;
@@ -33,7 +33,9 @@ public class TestActivity extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_CUSTOM_TITLE);
         setContentView(R.layout.activity_test);
+        getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.title1);
         FragmentManager fm = getFragmentManager();
         list = (ListViewDemoFragment) fm.findFragmentById(R.id.list);
         FragmentTransaction ft = getFragmentManager().beginTransaction();
@@ -110,7 +112,7 @@ public class TestActivity extends Activity {
     // Submethods
     //////////////////////////////////////////////////////////////////////
     private void addShowHideListener(int buttonId, final Fragment fragment) {
-        final Button button = (Button) findViewById(buttonId);
+        final View button = findViewById(buttonId);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 FragmentTransaction ft = getFragmentManager().beginTransaction();
@@ -119,10 +121,8 @@ public class TestActivity extends Activity {
                     FrameLayout fl = (FrameLayout) findViewById(R.id.activity_test);
                     list.setWidth((int) (fl.getWidth() * 0.85));
                     ft.show(fragment);
-                    button.setText("Hide");
                 } else {
                     ft.hide(fragment);
-                    button.setText("Show");
                 }
                 button.bringToFront();
                 ft.commit();

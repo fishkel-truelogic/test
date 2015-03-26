@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="70dip"
+    android:gravity="center_horizontal"
+    android:paddingLeft="5dip"
+    android:background="#323331">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="35dip"
+        android:gravity="center_horizontal"
+        android:paddingLeft="5dip"
+        android:background="#323331">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="GALPON"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="35dip"
+        android:gravity="center_horizontal"
+        android:paddingLeft="5dip"
+        android:background="#323331">
+
+        <ImageView
+            android:layout_width="135dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/preferences"
+            android:id="@+id/btn_preferences"
+            android:layout_gravity="left"/>
+
+        <ImageView
+            android:layout_width="135dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/search"
+            android:id="@+id/btn_search"
+            android:layout_gravity="center"
+            android:onClick="openActivity3"/>
+
+        <ImageView
+            android:layout_width="135dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/noti_bell"
+            android:id="@+id/btn_list"
+            android:layout_gravity="right"/>
+
+        <!-- Stuff -->
+
+    </LinearLayout>
+
+</LinearLayout>

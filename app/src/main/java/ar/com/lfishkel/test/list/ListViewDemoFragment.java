@@ -30,13 +30,13 @@ public class ListViewDemoFragment extends ListFragment {
         mItems = new ArrayList<ListViewItem>();
         Resources resources = getResources();
 
-        mItems.add(new ListViewItem(resources.getDrawable(R.drawable.icon), "asd", "asdasd"));
-        mItems.add(new ListViewItem(resources.getDrawable(R.drawable.icon), "asd", "asdasd"));
-        mItems.add(new ListViewItem(resources.getDrawable(R.drawable.icon), "asd", "asdasd"));
-        mItems.add(new ListViewItem(resources.getDrawable(R.drawable.icon), "asd", "asdasd"));
-        mItems.add(new ListViewItem(resources.getDrawable(R.drawable.icon), "asd", "asdasd"));
-        mItems.add(new ListViewItem(resources.getDrawable(R.drawable.icon), "asd", "asdasd"));
-        mItems.add(new ListViewItem(resources.getDrawable(R.drawable.icon), "asd", "asdasd"));
+        mItems.add(new ListViewItem(resources.getDrawable(R.drawable.icon), "1", "asdasd"));
+        mItems.add(new ListViewItem(resources.getDrawable(R.drawable.icon), "2", "asdasd"));
+        mItems.add(new ListViewItem(resources.getDrawable(R.drawable.icon), "3", "asdasd"));
+        mItems.add(new ListViewItem(resources.getDrawable(R.drawable.icon), "4", "asdasd"));
+        mItems.add(new ListViewItem(resources.getDrawable(R.drawable.icon), "5", "asdasd"));
+        mItems.add(new ListViewItem(resources.getDrawable(R.drawable.icon), "6", "asdasd"));
+        mItems.add(new ListViewItem(resources.getDrawable(R.drawable.icon), "7", "asdasd"));
 
         // initialize and set the list adapter
         setListAdapter(new ListViewDemoAdapter(getActivity(), mItems));
@@ -59,6 +59,7 @@ public class ListViewDemoFragment extends ListFragment {
         // do something
         Toast.makeText(getActivity(), item.title, Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(getActivity(), TestActivity2.class);
+        intent.putExtra("item", item.title);
         startActivity(intent);
     }
 

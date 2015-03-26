@@ -3,6 +3,7 @@ package ar.com.lfishkel.test;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 
 /**
  * Created by lfishkel on 25/03/15.
@@ -29,6 +30,15 @@ public class TestActivity2 extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity2_test);
         System.out.println("Activity2: The activity is being created");
+        Bundle extras = getIntent().getExtras();
+        String title = "";
+        if (extras != null) {
+            title = extras.getString("item");
+        }
+        TextView txt = (TextView) findViewById(R.id.txt);
+        if (title != null && !title.isEmpty()) {
+            txt.setText(title);
+        }
     }
 
 
