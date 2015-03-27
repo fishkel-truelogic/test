@@ -1,6 +1,7 @@
 package ar.com.lfishkel.test.list;
 
 import android.app.Fragment;
+import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,13 +18,18 @@ public class LeftLayoutFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-/*
         ListViewDemoFragment list = new ListViewDemoFragment();
-        View view =  getActivity().findViewById(R.id.activity_test);
+        View view = null;
+        if (getActivity().findViewById(R.id.activity_test) != null) {
+            view = getActivity().findViewById(R.id.activity_test);
+        } else if (getActivity().findViewById(R.id.activity2_test) != null) {
+            view = getActivity().findViewById(R.id.activity2_test);
+        } else if (getActivity().findViewById(R.id.activity3_test) != null) {
+            view = getActivity().findViewById(R.id.activity3_test);
+        }
         list.setWidth((int) (view.getWidth() * 0.85));
         FragmentTransaction fragmentTransaction = getChildFragmentManager().beginTransaction();
-        fragmentTransaction.add(R.id.right_menu_fragment, list).commit();
-*/
+        fragmentTransaction.add(R.id.left_menu_fragment, list).commit();
     }
 
     @Override

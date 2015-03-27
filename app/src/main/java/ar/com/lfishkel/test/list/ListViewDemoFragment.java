@@ -34,11 +34,18 @@ public class ListViewDemoFragment extends ListFragment {
         Resources resources = getResources();
 
         mItems.add(new ListViewItem(resources.getDrawable(R.drawable.icon), "1", "asdasd"));
-        mItems.add(new ListViewItem(resources.getDrawable(R.drawable.icon), "2", "asdasd"));
+        mItems.add(new ListViewItem(resources.getDrawable(R.drawable.icon2), "2", "asdasd"));
         mItems.add(new ListViewItem(resources.getDrawable(R.drawable.icon), "3", "asdasd"));
-        mItems.add(new ListViewItem(resources.getDrawable(R.drawable.icon), "4", "asdasd"));
+        mItems.add(new ListViewItem(resources.getDrawable(R.drawable.icon2), "4", "asdasd"));
         mItems.add(new ListViewItem(resources.getDrawable(R.drawable.icon), "5", "asdasd"));
-        mItems.add(new ListViewItem(resources.getDrawable(R.drawable.icon), "6", "asdasd"));
+        mItems.add(new ListViewItem(resources.getDrawable(R.drawable.icon2), "6", "asdasd"));
+        mItems.add(new ListViewItem(resources.getDrawable(R.drawable.icon), "7", "asdasd"));
+        mItems.add(new ListViewItem(resources.getDrawable(R.drawable.icon), "1", "asdasd"));
+        mItems.add(new ListViewItem(resources.getDrawable(R.drawable.icon2), "2", "asdasd"));
+        mItems.add(new ListViewItem(resources.getDrawable(R.drawable.icon), "3", "asdasd"));
+        mItems.add(new ListViewItem(resources.getDrawable(R.drawable.icon2), "4", "asdasd"));
+        mItems.add(new ListViewItem(resources.getDrawable(R.drawable.icon), "5", "asdasd"));
+        mItems.add(new ListViewItem(resources.getDrawable(R.drawable.icon2), "6", "asdasd"));
         mItems.add(new ListViewItem(resources.getDrawable(R.drawable.icon), "7", "asdasd"));
 
         // initialize and set the list adapter

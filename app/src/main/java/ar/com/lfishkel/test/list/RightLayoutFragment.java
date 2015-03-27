@@ -20,7 +20,14 @@ public class RightLayoutFragment extends Fragment {
         super.onCreate(savedInstanceState);
 
         ListViewDemoFragment list = new ListViewDemoFragment();
-        View view =  getActivity().findViewById(R.id.activity_test);
+        View view = null;
+        if (getActivity().findViewById(R.id.activity_test) != null) {
+            view = getActivity().findViewById(R.id.activity_test);
+        } else if (getActivity().findViewById(R.id.activity2_test) != null) {
+            view = getActivity().findViewById(R.id.activity2_test);
+        } else if (getActivity().findViewById(R.id.activity3_test) != null) {
+            view = getActivity().findViewById(R.id.activity3_test);
+        }
         list.setWidth((int) (view.getWidth() * 0.85));
         FragmentTransaction fragmentTransaction = getChildFragmentManager().beginTransaction();
         fragmentTransaction.add(R.id.right_menu_fragment, list).commit();
@@ -37,13 +44,5 @@ public class RightLayoutFragment extends Fragment {
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-       /* Fragment f  = getFragmentManager().findFragmentByTag(LIST_TAG);
-        if (f != null && f.getView() != null) {
-            ViewGroup.LayoutParams params = f.getView().getLayoutParams();
-            params.width = (int) (params.width * 0.85);
-            f.getView().setLayoutParams(params);
-        }*/
-
-
     }
 }

@@ -52,7 +52,8 @@
             android:layout_height="wrap_content"
             android:src="@drawable/noti_bell"
             android:id="@+id/btn_list"
-            android:layout_gravity="right"/>
+            android:layout_gravity="right"
+            android:onClick="toggleList"/>
 
 
     </LinearLayout>

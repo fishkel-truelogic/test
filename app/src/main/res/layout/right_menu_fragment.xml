@@ -4,12 +4,4 @@
     android:gravity="right" android:background="#2d43908f"
     android:layout_height="match_parent" android:onClick="toggleList">
 
-<!--
-    <fragment android:name="ar.com.lfishkel.test.list.ListViewDemoFragment"
-        android:id="@+id/list"
-        android:layout_weight="1"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="right"/>
--->
 </LinearLayout>
