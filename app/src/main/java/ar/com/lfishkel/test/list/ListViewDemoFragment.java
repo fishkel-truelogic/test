@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -19,7 +20,10 @@ import ar.com.lfishkel.test.TestActivity2;
  */
 public class ListViewDemoFragment extends ListFragment {
 
+    private int width;
+
     private List<ListViewItem> mItems;        // ListView items list
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -47,6 +51,9 @@ public class ListViewDemoFragment extends ListFragment {
         super.onViewCreated(view, savedInstanceState);
         // remove the dividers from the ListView of the ListFragment
         getListView().setDivider(null);
+        ViewGroup.LayoutParams params = view.getLayoutParams();
+        params.width = width;
+        view.setLayoutParams(params);
     }
 
     @Override
@@ -60,4 +67,7 @@ public class ListViewDemoFragment extends ListFragment {
         startActivity(intent);
     }
 
+    public void setWidth(int width) {
+        this.width = width;
+    }
 }

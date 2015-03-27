@@ -36,7 +36,8 @@
             android:layout_height="wrap_content"
             android:src="@drawable/preferences"
             android:id="@+id/btn_preferences"
-            android:layout_gravity="left"/>
+            android:layout_gravity="left"
+            android:onClick="toggleMenu"/>
 
         <ImageView
             android:layout_width="135dp"

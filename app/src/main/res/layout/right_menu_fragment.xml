@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:orientation="vertical" android:layout_width="match_parent" android:id="@+id/right_menu_fragment"
+    android:gravity="right" android:background="#2d43908f"
+    android:layout_height="match_parent" android:onClick="toggleList">
 
-
+<!--
     <fragment android:name="ar.com.lfishkel.test.list.ListViewDemoFragment"
         android:id="@+id/list"
         android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="right"/>
-
+-->
 </LinearLayout>

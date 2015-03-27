@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 
+import ar.com.lfishkel.test.list.LeftLayoutFragment;
 import ar.com.lfishkel.test.list.ListViewDemoFragment;
 import ar.com.lfishkel.test.list.RightLayoutFragment;
 
@@ -19,6 +20,7 @@ public abstract class TestTitlebarActivity extends Activity {
     // Constants
     //////////////////////////////////////////////////////////////////////
 
+    public static final String SETTINGS_FRAGMENT_TAG = "settings_fragment_tag";
     public static final String LIST_FRAGMENT_TAG = "list_fragment_tag";
     public static final String LIST_TAG = "list_fragment";
 
@@ -165,6 +167,13 @@ public abstract class TestTitlebarActivity extends Activity {
 
 
     public void toggleList(View v) {
+
+        Fragment f2 = getFragmentManager().findFragmentByTag(SETTINGS_FRAGMENT_TAG);
+
+        if (f2 != null) {
+            getFragmentManager().popBackStack();
+        }
+
         Fragment f = getFragmentManager().findFragmentByTag(LIST_FRAGMENT_TAG);
 
         if (f != null) {
@@ -178,6 +187,32 @@ public abstract class TestTitlebarActivity extends Activity {
                             R.anim.slide_left_in_test, R.anim.slide_right_out_test)
 
                     .add(frame_id, fragment, LIST_FRAGMENT_TAG).addToBackStack(null).commit();
+
+
+        }
+
+    }
+
+    public void toggleMenu(View v) {
+        Fragment f2 = getFragmentManager().findFragmentByTag(LIST_FRAGMENT_TAG);
+
+        if (f2 != null) {
+            getFragmentManager().popBackStack();
+        }
+
+        Fragment f = getFragmentManager().findFragmentByTag(SETTINGS_FRAGMENT_TAG);
+
+        if (f != null) {
+            getFragmentManager().popBackStack();
+        } else {
+
+            LeftLayoutFragment fragment = (LeftLayoutFragment) Fragment.instantiate(this, LeftLayoutFragment.class.getName());
+            getFragmentManager()
+                    .beginTransaction()
+                    .setCustomAnimations(R.anim.slide_right_in_test, R.anim.slide_left_out_test,
+                            R.anim.slide_right_in_test, R.anim.slide_left_out_test)
+
+                    .add(frame_id, fragment, SETTINGS_FRAGMENT_TAG).addToBackStack(null).commit();
 
 
         }
